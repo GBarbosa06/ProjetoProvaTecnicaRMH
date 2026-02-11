@@ -27,6 +27,11 @@ public class DocumentController {
         return ResponseEntity.ok(documentService.listAll());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Document> findById(@PathVariable Long id){
+        return ResponseEntity.ok(documentService.findByIdOrThrowBadRequestException(id));
+    }
+
     @PostMapping
     public ResponseEntity<Document> upload(
             @RequestParam String title,

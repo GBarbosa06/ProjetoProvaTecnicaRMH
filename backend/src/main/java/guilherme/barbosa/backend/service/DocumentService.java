@@ -30,7 +30,7 @@ public class DocumentService {
         return documentRepository.findAll();
     }
 
-    public Document findById(Long id) {
+    public Document findByIdOrThrowBadRequestException(Long id) {
         return documentRepository.findById(id)
                 .orElseThrow(() -> new BadRequestException("Documento não encontrado"));
     }
@@ -79,7 +79,7 @@ public class DocumentService {
     }
 
     public Resource downloadFile(Long id) {
-        Document document = findById(id);
+        Document document = findByIdOrThrowBadRequestException(id);
 
         Path filePath = uploadDir.resolve(document.getFilename());
         try {
@@ -90,7 +90,7 @@ public class DocumentService {
     }
 
     public void deleteDocument(Long documentId) {
-        Document document = findById(documentId);
+        Document document = findByIdOrThrowBadRequestException(documentId);
 
         Path filePath = uploadDir.resolve(document.getFilename());
 
