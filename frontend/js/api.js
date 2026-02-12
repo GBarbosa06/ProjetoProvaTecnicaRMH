@@ -36,6 +36,7 @@ export async function deleteDocument(documentId) {
       } catch (_) {}
       throw new Error(msg);
     }
+    location.reload();
     return true;
   } catch (err) {
     alert(err.message || "Erro ao deletar documento");
