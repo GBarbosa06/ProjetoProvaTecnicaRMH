@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Documento</h1>
+
+    <section>
+        <p style="margin-bottom: 20px;"><a href="index.html">← Voltar à lista</a></p>
+        <div id="loading">Carregando...</div>
+        <div id="content" class="doc-info" style="display: none;">
+            <p><strong>Título:</strong> <span id="title"></span></p>
+            <p><strong>Descrição:</strong> <span id="description"></span></p>
+            <p><strong>Arquivo:</strong> <a id="fileLink" href="" target="_blank"></a></p>
+            <p><strong>Data de upload:</strong> <span id="uploadDate"></span></p>
+            <p class="submit-area" style="margin-top: 20px;">
+                <button type="button" id="btnDelete" class="cancel">Apagar documento</button>
+            </p>
+            <h2>Comentários</h2>
+
+            <ul id="commentsList"></ul>
+
+            <form id="commentForm">
+                <div>
+                    <label for="commentText" class="commentText">Novo comentário</label>
+                    <textarea id="commentText" name="text" rows="3" placeholder="Escreva um comentário..." required></textarea>
+                </div>
+                <div class="submit-area">
+                    <button type="submit">Enviar comentário</button>
+                </div>
+            </form>
+            
+        </div>
+        <div id="error" style="display: none;"></div>
+    </section>
+
+    <script type="module" src="js/document.js"></script>
+</body>
+</html>

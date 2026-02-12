@@ -5,64 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload de Documentos</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <h1>Gestão de Documentos</h1>
 
-    <!-- Upload -->
     <section>
-      <h2>Novo Documento</h2>
-  
-      <form id="uploadForm">
-        <div>
-          <label for="title">Título *</label><br />
-          <input
-            type="text"
-            id="title"
-            name="title"
-            required
-            placeholder="Ex: Contrato de Prestação de Serviços"
-          />
+        <div class="docs-bar-header">
+            <h2>Documentos</h2>
+            <button><a href="upload.html">Adicionar documento</a></button>
         </div>
-  
-        <div>
-          <label for="description">Descrição</label><br />
-          <input
-            type="text"
-            id="description"
-            name="description"
-            placeholder="Opcional"
-          />
-        </div>
-  
-        <div>
-          <label for="file">Arquivo *</label><br />
-          <input
-            type="file"
-            id="file"
-            name="file"
-            required
-            accept=".pdf,.png,.jpg,.jpeg"
-          />
-        </div>
-  
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  
-    <hr />
-  
-    <!-- Lista de documentos -->
-    <section>
-      <h2>Documentos</h2>
-  
-      <ul id="documentList">
-        <!-- preenchido via JS -->
-      </ul>
+
+        <ul id="documentList">
+        <!-- filled by JS -->
+        </ul>
     </section>
 
-      <script src="script.js"></script>
+      <script type="module" src="js/documents.js"></script>
 </body>
 </html>

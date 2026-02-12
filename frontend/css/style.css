@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style-type: none;
+  word-break: break-word;
+  white-space: normal;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #1f2937;
+}
+
+section {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #111827;
+}
+
+a{
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+
+.docs-bar-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.docs-bar-header > button{
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 0;
+  margin: 30px 0px;
+  background-color: rgba(8, 234, 8, 0.654);
+  border: solid 1px #9999993c;
+  border-radius: 50px;
+  height: 50px;
+  transition: background-color .3s;
+  overflow: hidden;
+}
+
+.docs-bar-header > button:hover{
+  background-color: rgba(0, 184, 0, 0.818);
+}
+
+.docs-bar-header > button > a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 50px;
+  padding: 0 15px;
+  color: black;
+  box-sizing: border-box;
+}
+.docs-bar-header > button > a:active {
+  color: black;
+}
+
+.empty-docs{
+  color: #999;
+  font-style: italic;
+  padding: 16px;
+  text-align: center;
+  background: #f0f0f0;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+/*
+  UPLOADS
+*/
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+.submit-area{
+  gap: 15px;
+}
+
+.submit-area > button{
+  margin-top: 10px;
+  padding: 12px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"] {
+  background-color: #2563eb;
+}
+
+button[type="submit"]:hover {
+  background-color: #1e40af;
+}
+
+.submit-area > button.cancel{
+  background-color: #eb2525;
+
+}  
+
+.submit-area > button.cancel:hover{
+  background-color: #b52323;
+}
+
+.submit-area > button.cancel{
+  padding: 0;
+}
+.submit-area > button.cancel > a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  padding: 12px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+
+.doc-info p{
+  margin-bottom: 8px;
+}
+
+#btnDelete{
+  padding: 5px;
+}
+
+#commentsList {
+  margin: 15px 0;
+  padding: 0;
+}
+
+#commentsList li {
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+#commentsList li:last-child {
+  margin-bottom: 0;
+}
+
+.delete-comment-btn {
+  transition: background-color 0.2s ease;
+  padding: 5px;
+}
+
+.delete-comment-btn:hover {
+  background-color: #b52323 !important;
+}

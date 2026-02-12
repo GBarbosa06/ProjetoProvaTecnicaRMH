@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Documentos</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Gestão de Documentos</h1>
+
+    <section>
+        <h2>Upload de Documentos</h2>
+
+        <form id="uploadForm">
+            <div>
+                <label for="title">Título</label>
+                <input type="text" id="title" name="title" placeholder="Título do documento" required>
+            </div>
+            <div>
+                <label for="description">Descrição</label>
+                <input type="text" id="description" name="description" placeholder="Descrição opcional">
+            </div>
+            <div>
+                <label for="file">Arquivo</label>
+                <input type="file" id="file" name="file" required>
+            </div>
+            <div class="submit-area">
+                <button type="submit">Enviar</button>
+                <button type="button" class="cancel"><a href="index.html">Cancelar</a></button>
+            </div>
+        </form>
+    </section> 
+
+
+    <script type="module" src="js/upload.js"></script>
+</body>
+</html>
