@@ -78,6 +78,12 @@ public class DocumentService {
         }
     }
 
+    public String getDownloadFilename(Long id) {
+        Document document = findByIdOrThrowBadRequestException(id);
+        String extension = getExtension(document.getFilename());
+        return document.getTitle() + "." + extension;
+    }
+
     public Resource downloadFile(Long id) {
         Document document = findByIdOrThrowBadRequestException(id);
 

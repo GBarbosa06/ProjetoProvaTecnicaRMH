@@ -43,11 +43,12 @@ public class DocumentController {
     @GetMapping("/{id}/download")
     public ResponseEntity<Resource> download(@PathVariable Long id) {
         Resource resource = documentService.downloadFile(id);
+        String filename = documentService.getDownloadFilename(id);
 
         return ResponseEntity.ok()
                 .header(
                         HttpHeaders.CONTENT_DISPOSITION,
-                        "attachment; filename=\"file\""
+                        "attachment; filename=\"" + filename + "\""
                 )
                 .body(resource);
     }
