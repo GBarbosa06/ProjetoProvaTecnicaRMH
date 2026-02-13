@@ -39,6 +39,17 @@ public class DocumentService {
         return filename.substring(filename.lastIndexOf('.') + 1).toLowerCase();
     }
 
+    public String getContentType(Long id) {
+        Document document = findByIdOrThrowBadRequestException(id);
+        String ext = getExtension(document.getFilename());
+        return switch (ext) {
+            case "pdf" -> "application/pdf";
+            case "jpg", "jpeg" -> "image/jpeg";
+            case "png" -> "image/png";
+            default -> "application/octet-stream";
+        };
+    }
+
     private boolean isAllowedExtension(String ext) {
         return ext.equals("pdf") || ext.equals("jpg") || ext.equals("png");
     }

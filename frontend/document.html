@@ -11,7 +11,7 @@
 <body>
     <h1>Documento</h1>
 
-    <section>
+    <section class="document-detail">
         <p style="margin-bottom: 20px;"><a href="index.html">← Voltar à lista</a></p>
         <div id="loading">Carregando...</div>
         <div id="content" class="doc-info" style="display: none;">
@@ -19,6 +19,12 @@
             <p><strong>Descrição:</strong> <span id="description"></span></p>
             <p><strong>Arquivo:</strong> <a id="fileLink" href="" target="_blank"></a></p>
             <p><strong>Data de upload:</strong> <span id="uploadDate"></span></p>
+
+            <div id="previewSection" class="document-preview" style="display: none;">
+                <h2>Pré-visualização</h2>
+                <div id="previewContainer" class="preview-container"></div>
+            </div>
+
             <p class="submit-area" style="margin-top: 20px;">
                 <button type="button" id="btnDelete" class="cancel">Apagar documento</button>
             </p>

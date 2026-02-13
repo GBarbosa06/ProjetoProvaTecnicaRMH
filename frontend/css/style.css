@@ -48,6 +48,10 @@ section {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
+section.document-detail {
+  max-width: 720px;
+}
+
 section h2 {
   margin-bottom: 20px;
   font-size: 1.5rem;
@@ -235,4 +239,44 @@ button[type="submit"]:hover {
 
 .delete-comment-btn:hover {
   background-color: #b52323 !important;
+}
+
+/*
+  DOCUMENT PREVIEW
+*/
+
+.document-preview {
+  margin: 24px 0;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.document-preview h2 {
+  margin-bottom: 12px;
+}
+
+.preview-container {
+  background: #f3f4f6;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-embed {
+  width: 100%;
+  min-height: 400px;
+  max-height: 70vh;
+  border: none;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 70vh;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }

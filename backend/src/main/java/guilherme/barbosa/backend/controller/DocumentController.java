@@ -53,6 +53,17 @@ public class DocumentController {
                 .body(resource);
     }
 
+    @GetMapping("/{id}/view")
+    public ResponseEntity<Resource> view(@PathVariable Long id) {
+        Resource resource = documentService.downloadFile(id);
+        String contentType = documentService.getContentType(id);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "inline")
+                .header(HttpHeaders.CONTENT_TYPE, contentType)
+                .body(resource);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteDocument(@PathVariable Long id) {
         documentService.deleteDocument(id);

@@ -1,4 +1,5 @@
-export const BASE_API_URL = "https://projetoprovatecnicarmh.onrender.com";
+export const BASE_API_URL = "http://localhost:8080";
+//"https://projetoprovatecnicarmh.onrender.com";
 // It would be valid to put this in an .env or config file outside of git, but in this case it's not necessary
 
 export async function apiFetch(endpoint, options = {}) {

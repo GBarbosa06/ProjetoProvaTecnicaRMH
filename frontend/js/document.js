@@ -16,6 +16,39 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
+function getExtension(filename) {
+  if (!filename || !filename.includes(".")) return "";
+  return filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
+}
+
+function renderPreview(docId, filename, container, section) {
+  const ext = getExtension(filename);
+  const viewUrl = BASE_API_URL + "/documents/" + docId + "/view";
+
+  const previewable = ["pdf", "jpg", "jpeg", "png"];
+  if (!previewable.includes(ext)) {
+    section.style.display = "none";
+    return;
+  }
+
+  container.innerHTML = "";
+  if (ext === "pdf") {
+    const embed = document.createElement("embed");
+    embed.src = viewUrl;
+    embed.type = "application/pdf";
+    embed.className = "preview-embed";
+    embed.setAttribute("title", "Pré-visualização do PDF");
+    container.appendChild(embed);
+  } else {
+    const img = document.createElement("img");
+    img.src = viewUrl;
+    img.alt = "Pré-visualização do documento";
+    img.className = "preview-image";
+    container.appendChild(img);
+  }
+  section.style.display = "block";
+}
+
 function renderCommentsList(comments, listEl, docId) {
   if (comments.length === 0) {
     listEl.innerHTML = "<li>Nenhum comentário.</li>";
@@ -97,6 +130,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const fileLink = document.getElementById("fileLink");
     fileLink.href = BASE_API_URL + "/documents/" + docId + "/download";
     fileLink.textContent = doc.filename || "Download";
+
+    const previewSection = document.getElementById("previewSection");
+    const previewContainer = document.getElementById("previewContainer");
+    renderPreview(docId, doc.filename, previewContainer, previewSection);
 
     renderCommentsList(comments, commentsList, docId);
 
